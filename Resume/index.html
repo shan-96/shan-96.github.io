@@ -274,7 +274,7 @@
 				<div class="portfolio-header">
 					<ul id="portfolio-filters">
 						<!--li><a href="*" class="current">All</a></li-->
-						<li><a href=".photo" class="current">Gallery</a></li>
+						<li><a id="firstclick" href=".photo" class="current">Gallery</a></li>
 						<li><a href=".graphic">Projects</a></li>
 						<li><a href=".web">Certificates</a></li>
 					</ul>
@@ -521,5 +521,10 @@
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/isotope.pkgd.min.js"></script>
 		<script src="js/script.js"></script>
+		<script>
+			jQuery(function(){
+			   jQuery('#firstclick').click();
+			});	
+		</script>
 	</body>
 </html>
