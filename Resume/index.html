@@ -23,7 +23,7 @@
 						</a>
 					</li>
 					<li class="profile"><a href="#profile"><span class="icon">a</span></a></li>
-					<li class="portfolio"><a href="#portfolio"><span class="icon">b</span></a></li>
+					<li class="portfolio"><a id="firstclick" href="#portfolio"><span class="icon">b</span></a></li>
 					<li class="contact"><a href="#contact"><span class="icon">c</span></a></li>
 				</ul>
 				<div class="clear"></div>
@@ -274,7 +274,7 @@
 				<div class="portfolio-header">
 					<ul id="portfolio-filters">
 						<!--li><a href="*" class="current">All</a></li-->
-						<li><a id="firstclick" href=".photo" class="current">Gallery</a></li>
+						<li><a id="secondclick" href=".photo" class="current">Gallery</a></li>
 						<li><a href=".graphic">Projects</a></li>
 						<li><a href=".web">Certificates</a></li>
 					</ul>
@@ -523,7 +523,9 @@
 		<script src="js/script.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-			    $("#firstclick").click(); 
+			    $("#firstclick").click(function(){
+			    	$("#secondclick").trigger('click');
+			    }); 
 			});
 		</script>
 	</body>
