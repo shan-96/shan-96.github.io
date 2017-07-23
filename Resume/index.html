@@ -532,7 +532,17 @@
 			
 			$(document).ready(function(){
 				$("#formsubmit").click(function(){
-					alert("success!");
+					//alert("success!");
+					$.post("http://insigniathefest.com/shan/form.php",
+					       {
+						username:username,
+						email:email,
+						message:message
+					       },
+					       function(response,status){
+						//console.log(response);
+						$( ".result" ).html(response);
+					});
 				});
 			});
 		</script>
