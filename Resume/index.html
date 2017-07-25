@@ -586,6 +586,10 @@
 					.then(function(response) {
 					   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
 					   $( ".result" ).html("Your message has been sent!");
+					   $("#input1").val() = "";
+					   $("#input2").val() = "";
+					   $("#input3").val() = "";
+					   $("#input4").val() = "";
 					}, function(err) {
 					   console.log("FAILED. error=", err);
 					   $( ".result" ).html("Your message was not sent. Please try again!");
