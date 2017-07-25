@@ -576,13 +576,15 @@
 					var email = $("#input2").val();
 					var message = $("#input3").val();
 					
+					alert(username+email+message);
+					
 					// parameters: service_id, template_id, template_parameters
-					emailjs.send("gmail","resume_template",{name: username+" "+email, notes: message})
+					/*emailjs.send("gmail","resume_template",{name: username+" "+email, notes: message})
 					.then(function(response) {
 					   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
 					}, function(err) {
 					   console.log("FAILED. error=", err);
-					});
+					});*/
 					
 					/*$.post("http://insigniathefest.com/shan/form.php",
 					       {
