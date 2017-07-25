@@ -539,7 +539,7 @@
 									<textarea id= "input3" name="message"></textarea>
 								</div>
 								<div class="button">
-									<a href="#"><button id="formsubmit" class="submit">submit</button></a>
+									<a href=".clear"><button id="formsubmit" class="submit">submit</button></a>
 									<div class="req">Remember to fill out all the fields.</div>
 								</div>
 								<div class="result"></div>
@@ -586,10 +586,7 @@
 					.then(function(response) {
 					   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
 					   $( ".result" ).html("Your message has been sent!");
-					   $("#input1").val() = "";
-					   $("#input2").val() = "";
-					   $("#input3").val() = "";
-					   $("#input4").val() = "";
+					   $("input[type=text], textarea").val("");
 					}, function(err) {
 					   console.log("FAILED. error=", err);
 					   $( ".result" ).html("Your message was not sent. Please try again!");
