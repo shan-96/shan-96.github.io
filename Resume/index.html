@@ -524,15 +524,15 @@
 							<div id="contact_form">
 								<div class="field">
 									<label class="required">Name</label>
-									<input type="text" name="username"/>
+									<input id= "input1" type="text" name="username"/>
 								</div>
 								<div class="field">
 									<label class="required">Email</label>
-									<input type="text" name="email"/>
+									<input id= "input2" type="text" name="email"/>
 								</div>
 								<div class="field">
 									<label class="required">Message</label>
-									<textarea name="message"></textarea>
+									<textarea id= "input3" name="message"></textarea>
 								</div>
 								<div class="button">
 									<a href="#"><button id="formsubmit" class="submit">submit</button></a>
@@ -566,6 +566,9 @@
 			$(document).ready(function(){
 				$("#formsubmit").click(function(){
 					//alert("success!");
+					var username = $("#input3").val();
+					var email = $("#input3").val();
+					var message = $("#input3").val();
 					$.post("http://insigniathefest.com/shan/form.php",
 					       {
 						username:username,
