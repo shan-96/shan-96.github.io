@@ -555,6 +555,12 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script type="text/javascript">
+		   (function(){
+		      emailjs.init("user_xQ4L9BSpzWutt3kR0xaOn");
+		   })();
+		</script>
 		<script src="js/script.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -569,7 +575,16 @@
 					var username = $("#input1").val();
 					var email = $("#input2").val();
 					var message = $("#input3").val();
-					$.post("http://insigniathefest.com/shan/form.php",
+					
+					// parameters: service_id, template_id, template_parameters
+					emailjs.send("gmail","resume_template",{name: username+" "+email, notes: message})
+					.then(function(response) {
+					   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+					}, function(err) {
+					   console.log("FAILED. error=", err);
+					});
+					
+					/*$.post("http://insigniathefest.com/shan/form.php",
 					       {
 						username:username,
 						email:email,
@@ -578,7 +593,7 @@
 					       function(response,status){
 						//console.log(response);
 						$( ".result" ).html(response);
-					});
+					});*/
 				});
 			});
 		</script>
