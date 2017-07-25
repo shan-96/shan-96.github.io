@@ -528,7 +528,11 @@
 								</div>
 								<div class="field">
 									<label class="required">Email</label>
-									<input id= "input2" type="text" name="email"/>
+									<input id= "input2" type="email" name="email"/>
+								</div>
+								<div class="field">
+									<label class="required">Subject</label>
+									<input id= "input4" type="text" name="subject"/>
 								</div>
 								<div class="field">
 									<label class="required">Message</label>
@@ -575,13 +579,16 @@
 					var username = $("#input1").val();
 					var email = $("#input2").val();
 					var message = $("#input3").val();
+					var subject = $("#input4").val();
 					
 					// parameters: service_id, template_id, template_parameters
-					emailjs.send("gmail","resume_template",{username: username,email: email, message: message})
+					emailjs.send("gmail","resume_template",{username: username,email: email, message: message, subject: subject})
 					.then(function(response) {
 					   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+					   $( ".result" ).html("Your message has been sent!");
 					}, function(err) {
 					   console.log("FAILED. error=", err);
+					   $( ".result" ).html("Your message was not sent. Please try again!");
 					});
 					
 					/*$.post("http://insigniathefest.com/shan/form.php",
