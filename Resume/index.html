@@ -686,6 +686,10 @@
 					var email = $("#input2").val();
 					var message = $("#input3").val();
 					var subject = $("#input4").val();
+
+					message = "Name: "+ username + "\n" +
+					"Email: " + email +"\n" +
+					"Message: \n" + message;
 					
 					// parameters: service_id, template_id, template_parameters
 					emailjs.send("gmail","resume_template",{username: username,email: email, message: message, subject: subject})
